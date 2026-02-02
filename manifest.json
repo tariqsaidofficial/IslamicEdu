@@ -17,7 +17,8 @@
     {
       "src": "https://res.cloudinary.com/do5bwj81j/image/upload/v1770008761/Asset_3_gmnqey.webp",
       "sizes": "512x512",
-      "type": "image/webp"
+      "type": "image/webp",
+      "purpose": "any"
     }
   ]
 }

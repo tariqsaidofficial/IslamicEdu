@@ -9,11 +9,14 @@
     <meta name="theme-color" content="#c5a075" />
     
     <!-- PWA & Mobile Support -->
-    <link rel="manifest" href="manifest.json" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="IslamicEdu" />
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/do5bwj81j/image/upload/v1770008761/Asset_3_gmnqey.webp" />
+    
+    <!-- Favicon to prevent 404 -->
+    <link rel="icon" type="image/webp" href="https://res.cloudinary.com/do5bwj81j/image/upload/v1770008761/Asset_3_gmnqey.webp" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +61,13 @@
         body {
           user-select: none;
         }
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
     </style>
     <script type="importmap">
