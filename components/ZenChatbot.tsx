@@ -7,7 +7,6 @@ import {
   Loader2, 
   User, 
   Trash2, 
-  GraduationCap, 
   FileText, 
   CheckCircle2,
   Info,
@@ -54,6 +53,8 @@ const ZenChatbot: React.FC = () => {
   const [examDate, setExamDate] = useState('');
   const [learningStyle, setLearningStyle] = useState('Balanced');
   const [studySubject, setStudySubject] = useState('');
+
+  const logoUrl = "https://res.cloudinary.com/do5bwj81j/image/upload/v1770008761/Asset_3_gmnqey.webp";
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -154,18 +155,17 @@ const ZenChatbot: React.FC = () => {
     <>
       <button 
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-[#c5a075] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#b38f66] transition-all transform hover:scale-105 z-50 group"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-[#c5a075] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#b38f66] transition-all transform hover:scale-110 z-50 group border-2 border-white"
       >
-        <MessageCircle size={24} />
+        <img src={logoUrl} alt="IslamicEdu Logo" className="w-8 h-8 object-contain" />
         <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#8d6e63] border-2 border-white rounded-full shadow-sm"></span>
       </button>
 
-      {/* Increased z-index to [200] to ensure it covers the Header [100] */}
       <div className={`fixed inset-y-0 right-0 w-full sm:w-[400px] bg-white shadow-2xl z-[200] transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-5 border-b flex items-center justify-between bg-[#fcf9f5]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#c5a075] rounded-full flex items-center justify-center text-white">
-              <GraduationCap size={20} />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 p-2">
+              <img src={logoUrl} alt="IslamicEdu Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <h3 className="font-bold text-gray-800 text-sm">IslamicEduBot</h3>
@@ -304,7 +304,6 @@ const ZenChatbot: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* Backdrop z-index also updated to cover the site content below the header */}
       {isOpen && <div onClick={() => setIsOpen(false)} className="fixed inset-0 bg-black/20 backdrop-blur-[2px] z-[190] transition-all" />}
     </>
   );

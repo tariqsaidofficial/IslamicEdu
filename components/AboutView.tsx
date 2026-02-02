@@ -4,8 +4,6 @@ import AboutHero from './AboutHero';
 import AboutSection from './AboutSection';
 import FounderProfile from './FounderProfile';
 import PodcastSection from './PodcastSection';
-import SpiritualitySection from './SpiritualitySection';
-import PathwaysSection from './PathwaysSection';
 
 const AboutView: React.FC = () => {
   return (
@@ -32,8 +30,6 @@ const AboutView: React.FC = () => {
       <PodcastSection />
       
       <AboutSection />
-      <SpiritualitySection />
-      <PathwaysSection />
       
       {/* Footer Insight */}
       <section className="py-24 bg-white">
