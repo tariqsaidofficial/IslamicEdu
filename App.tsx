@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import HomeView from './components/HomeView';
-import AboutView from './components/AboutView';
-import ServicesView from './components/ServicesView';
-import ServiceDetailView from './components/ServiceDetailView';
-import PrivacyPolicyView from './components/PrivacyPolicyView';
-import TermsOfServiceView from './components/TermsOfServiceView';
-import Footer from './components/Footer';
-import ZenChatbot from './components/ZenChatbot';
+import Header from './components/Header.tsx';
+import HomeView from './components/HomeView.tsx';
+import AboutView from './components/AboutView.tsx';
+import ServicesView from './components/ServicesView.tsx';
+import ServiceDetailView from './components/ServiceDetailView.tsx';
+import PrivacyPolicyView from './components/PrivacyPolicyView.tsx';
+import TermsOfServiceView from './components/TermsOfServiceView.tsx';
+import Footer from './components/Footer.tsx';
+import ZenChatbot from './components/ZenChatbot.tsx';
 
 export type PageType = 'home' | 'about' | 'services' | 'service-detail' | 'privacy' | 'terms';
 

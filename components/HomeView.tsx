@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Play, ArrowRight, Calendar, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
-import ServicesSection from './ServicesSection';
-import ProgramsSection from './ProgramsSection';
-import InsightsSection from './InsightsSection';
-import FactsSection from './FactsSection';
+import ServicesSection from './ServicesSection.tsx';
+import ProgramsSection from './ProgramsSection.tsx';
+import InsightsSection from './InsightsSection.tsx';
+import FactsSection from './FactsSection.tsx';
 
 const carouselImages = [
   "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=2070",

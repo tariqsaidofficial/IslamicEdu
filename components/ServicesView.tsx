@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ServicesSection from './ServicesSection';
+import ServicesSection from './ServicesSection.tsx';
 
 interface ServicesViewProps {
   onServiceSelect: (id: string) => void;
