@@ -2,7 +2,11 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
   return (
     <footer className="bg-[#fcf9f5] pt-24 pb-12">
       <div className="container mx-auto px-4 md:px-12 max-w-7xl">
@@ -23,34 +27,34 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="font-bold uppercase text-xs tracking-widest mb-8 text-gray-800">SERVICES</h3>
               <ul className="space-y-4 text-sm text-gray-500 font-medium">
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Grand Mosque</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Mosque</a></li>
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Hajj & Umrah</a></li>
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Zakat Sadaqah</a></li>
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Ramadan</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Tafsur Quran</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Tafsir Quran</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Travel</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Prayer</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Events</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-bold uppercase text-xs tracking-widest mb-8 text-gray-800">PROGRAMS</h3>
               <ul className="space-y-4 text-sm text-gray-500 font-medium">
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Gathering</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Worship</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Community</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Knowledge</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Media Center</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Career</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Madrasa Education</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Quranic Studies</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Community Initiatives</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Spiritual Development</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-bold uppercase text-xs tracking-widest mb-8 text-gray-800">LINKS</h3>
               <ul className="space-y-4 text-sm text-gray-500 font-medium">
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Our Partner</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Contact</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Help Center</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Islamic Blog</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Insights</a></li>
+                <li><button onClick={() => setCurrentPage?.('about')} className="hover:text-[#c5a075] transition-colors">• About Us</button></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Contact Us</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Our Mission</a></li>
+                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Resources</a></li>
               </ul>
             </div>
           </div>
@@ -58,10 +62,12 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col items-center justify-center pt-12 border-t border-[#c5a075]/10 space-y-6">
            <div className="flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-             <a href="#" className="hover:text-[#c5a075]">Privacy Policy</a>
-             <a href="#" className="hover:text-[#c5a075]">Our Terms</a>
+             <button onClick={() => setCurrentPage?.('privacy')} className="hover:text-[#c5a075]">Privacy Policy</button>
+             <button onClick={() => setCurrentPage?.('terms')} className="hover:text-[#c5a075]">Our Terms</button>
            </div>
-           <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Powered by SocioLib.</p>
+           <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+             Built with ❤️ by <a href="https://portfolio.dxbmark.com/" target="_blank" rel="noopener noreferrer" className="text-[#c5a075] hover:underline">Tariq Said</a>.
+           </p>
         </div>
       </div>
       

@@ -5,10 +5,12 @@ import HomeView from './components/HomeView';
 import AboutView from './components/AboutView';
 import ServicesView from './components/ServicesView';
 import ServiceDetailView from './components/ServiceDetailView';
+import PrivacyPolicyView from './components/PrivacyPolicyView';
+import TermsOfServiceView from './components/TermsOfServiceView';
 import Footer from './components/Footer';
 import ZenChatbot from './components/ZenChatbot';
 
-export type PageType = 'home' | 'about' | 'services' | 'service-detail';
+export type PageType = 'home' | 'about' | 'services' | 'service-detail' | 'privacy' | 'terms';
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,6 +42,10 @@ const App: React.FC = () => {
         return <AboutView />;
       case 'services':
         return <ServicesView onServiceSelect={navigateToService} />;
+      case 'privacy':
+        return <PrivacyPolicyView />;
+      case 'terms':
+        return <TermsOfServiceView />;
       case 'service-detail':
         return selectedServiceId ? (
           <ServiceDetailView 
@@ -67,7 +73,7 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
 
-      <Footer />
+      <Footer setCurrentPage={(page) => setCurrentPage(page as PageType)} />
       
       <ZenChatbot />
     </div>
