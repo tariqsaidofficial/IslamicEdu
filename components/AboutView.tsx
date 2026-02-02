@@ -1,9 +1,9 @@
 
 import React from 'react';
-import AboutHero from './AboutHero.tsx';
-import AboutSection from './AboutSection.tsx';
-import FounderProfile from './FounderProfile.tsx';
-import PodcastSection from './PodcastSection.tsx';
+import AboutHero from './AboutHero';
+import AboutSection from './AboutSection';
+import FounderProfile from './FounderProfile';
+import PodcastSection from './PodcastSection';
 
 const AboutView: React.FC = () => {
   return (
