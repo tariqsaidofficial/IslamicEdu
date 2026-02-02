@@ -5,6 +5,7 @@ import ServicesSection from './ServicesSection';
 import ProgramsSection from './ProgramsSection';
 import InsightsSection from './InsightsSection';
 import FactsSection from './FactsSection';
+import IslamicStudiesSection from './IslamicStudiesSection';
 
 const carouselImages = [
   "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=2070",
@@ -114,6 +115,11 @@ const HomeView: React.FC<HomeViewProps> = ({ onServiceSelect }) => {
       </section>
 
       <FactsSection />
+
+      <IslamicStudiesSection 
+        title={<>Curriculum for <span className="italic">Islamic</span></>}
+        tagline="Our Standards"
+      />
 
       <ServicesSection onServiceSelect={onServiceSelect} />
 

@@ -1,11 +1,94 @@
 
 import React, { useState } from 'react';
-import { ArrowLeft, CheckCircle, Calendar as CalendarIcon, Clock, Moon, Star, Bell } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Calendar as CalendarIcon, Clock, Moon, Star, Bell, BookOpen, Heart, Landmark, Coins, Map } from 'lucide-react';
 
 interface ServiceDetailProps {
   id: string;
   onBack: () => void;
 }
+
+const FivePillarsSection: React.FC = () => {
+  const pillars = [
+    {
+      id: 1,
+      title: "Shahada (Testimony)",
+      desc: "Believing and saying: \"None has the right to be worshipped but Allah, and Muhammad is His messenger.\"",
+      quote: "\"The best remembrance is: La ilaha illa Allah.\"",
+      icon: <Heart className="text-[#c5a075]" size={32} />
+    },
+    {
+      id: 2,
+      title: "Salah (Daily Prayer)",
+      desc: "Performing the five obligatory prayers daily to maintain a direct link with Allah.",
+      quote: "\"Prayer is a light that guides the believer's path.\"",
+      icon: <Landmark className="text-[#c5a075]" size={32} />
+    },
+    {
+      id: 3,
+      title: "Zakat (Charity)",
+      desc: "Giving 2.5% of your savings to the poor and needy every year.",
+      quote: "\"Wealth is never diminished by giving in charity.\"",
+      icon: <Coins className="text-[#c5a075]" size={32} />
+    },
+    {
+      id: 4,
+      title: "Sawm (Fasting)",
+      desc: "Fasting from dawn to sunset during the month of Ramadan to grow in God-consciousness.",
+      quote: "\"Fasting is a shield against wrongdoing and a path to piety.\"",
+      icon: <Moon className="text-[#c5a075]" size={32} />
+    },
+    {
+      id: 5,
+      title: "Hajj (Pilgrimage)",
+      desc: "Traveling to Mecca once in a lifetime for those who are physically and financially able.",
+      quote: "\"The reward of an accepted Hajj is nothing but Paradise.\"",
+      icon: <Map className="text-[#c5a075]" size={32} />
+    }
+  ];
+
+  return (
+    <div className="mt-20 py-16 border-t border-gray-100">
+      <div className="text-center mb-16">
+        <span className="text-[#c5a075] uppercase tracking-[0.4em] font-black text-[10px] mb-4 block">The Foundation of Faith</span>
+        <h3 className="text-4xl md:text-5xl serif mb-6">The Five <span className="italic">Pillars</span> of Islam</h3>
+        <div className="w-24 h-1 bg-[#c5a075] mx-auto"></div>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+        {pillars.map((pillar) => (
+          <div key={pillar.id} className="bg-[#fcf9f5] border border-[#c5a075]/10 p-8 rounded-[2.5rem] flex flex-col items-center text-center group hover:bg-white hover:shadow-xl hover:border-[#c5a075]/30 transition-all duration-500">
+            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+              {pillar.icon}
+            </div>
+            <span className="text-[10px] font-black text-[#c5a075]/40 mb-2 uppercase tracking-widest">Pillar {pillar.id}</span>
+            <h4 className="text-lg font-bold text-gray-900 mb-4 serif leading-tight">{pillar.title}</h4>
+            <p className="text-xs text-gray-500 leading-relaxed font-medium mb-6">{pillar.desc}</p>
+            
+            <div className="mt-auto pt-4 border-t border-[#c5a075]/10 w-full">
+              <p className="text-[11px] italic text-[#c5a075] font-semibold leading-snug">
+                {pillar.quote}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Simplified and Centered Visual Guide Illustration */}
+      <div className="mt-24 flex flex-col items-center">
+        <div className="max-w-2xl w-full rounded-3xl overflow-hidden border border-gray-100 shadow-lg bg-white">
+          <img 
+            src="https://res.cloudinary.com/do5bwj81j/image/upload/v1770017576/ChatGPT_Image_Feb_2_2026_11_32_26_AM_skoe8y.png" 
+            alt="How to Pray Steps" 
+            className="w-full h-auto object-contain block"
+          />
+        </div>
+        <p className="mt-8 text-[#c5a075] text-[10px] font-black uppercase tracking-[0.4em] text-center">
+          Allah loves your effort • Take your time
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const RamadanCalendar: React.FC = () => {
   const [year, setYear] = useState<'2026' | '2027'>('2026');
@@ -153,8 +236,8 @@ const serviceData: Record<string, {
     icon: "🧎",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d978?auto=format&fit=crop&q=80&w=2000",
     tagline: "Ascension of the Believer",
-    description: "Resources to improve your Salah.",
-    features: ["Workshops", "Quiet Halls"]
+    description: "Resources to improve your Salah. Prayer is the direct communication between the creator and the servant.",
+    features: ["Workshops", "Quiet Halls", "Steps Guide", "The 5 Pillars"]
   },
   "events": {
     name: "Events",
@@ -221,6 +304,7 @@ const ServiceDetailView: React.FC<ServiceDetailProps> = ({ id, onBack }) => {
             </div>
           </div>
           {id === 'events' && <RamadanCalendar />}
+          {id === 'prayer' && <FivePillarsSection />}
         </div>
       </section>
     </div>

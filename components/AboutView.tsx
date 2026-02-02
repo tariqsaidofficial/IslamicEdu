@@ -4,6 +4,7 @@ import AboutHero from './AboutHero';
 import AboutSection from './AboutSection';
 import FounderProfile from './FounderProfile';
 import PodcastSection from './PodcastSection';
+import IslamicStudiesSection from './IslamicStudiesSection';
 
 const AboutView: React.FC = () => {
   return (
@@ -25,6 +26,8 @@ const AboutView: React.FC = () => {
           <div className="w-16 h-1 bg-[#c5a075] mx-auto"></div>
         </div>
       </section>
+
+      <IslamicStudiesSection />
 
       <FounderProfile />
       <PodcastSection />

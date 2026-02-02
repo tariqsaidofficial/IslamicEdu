@@ -6,8 +6,8 @@ export const getGeminiResponse = async (
   messages: Message[],
   systemInstruction: string
 ): Promise<string> => {
-  // Use import.meta.env for Vite or process.env for standard Node environments
-  const apiKey = (import.meta as any).env?.VITE_API_KEY || process.env.API_KEY || "";
+  // Use process.env.API_KEY directly as per strict system instructions
+  const apiKey = process.env.API_KEY || "";
   const ai = new GoogleGenAI({ apiKey });
   
   const contents = messages.map(m => ({
@@ -17,7 +17,7 @@ export const getGeminiResponse = async (
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-pro-preview',
+      model: 'gemini-flash-lite-latest',
       contents: contents,
       config: {
         systemInstruction,
@@ -34,6 +34,6 @@ export const getGeminiResponse = async (
     return response.text;
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "I encountered a spiritual block while thinking. Let's try rephrasing your request!";
+    return "I encountered a spiritual block while thinking. This might be due to a connection issue. Let's try rephrasing your request!";
   }
 };
