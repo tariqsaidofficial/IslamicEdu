@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const services = [
   { id: "mosque", name: "Mosque", icon: "🕌" },
@@ -28,20 +30,34 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onServiceSelect }) =>
         <p className="text-gray-500 mb-20 max-w-2xl mx-auto text-sm">Discover our comprehensive range of spiritual services designed to nurture your soul and connect you with the divine.</p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-          {services.map((service, idx) => (
-            <div 
-              key={idx} 
-              className="group cursor-pointer"
-              onClick={() => onServiceSelect?.(service.id)}
-            >
+          {services.map((service, idx) => {
+            const content = (
               <div className="bg-[#f9f7f2] rounded-t-full rounded-b-2xl p-10 flex flex-col items-center justify-center transition-all group-hover:bg-white group-hover:shadow-xl group-hover:-translate-y-2">
                 <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-500">
                   {service.icon}
                 </div>
                 <h3 className="font-bold text-gray-800 text-sm tracking-wide">{service.name}</h3>
               </div>
-            </div>
-          ))}
+            );
+
+            if (service.id === 'prayer') {
+              return (
+                <Link key={idx} href="/prayer" className="group cursor-pointer">
+                  {content}
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={idx}
+                className="group cursor-pointer"
+                onClick={() => onServiceSelect?.(service.id)}
+              >
+                {content}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

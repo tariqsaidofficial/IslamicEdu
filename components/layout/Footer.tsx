@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Ramadan</a></li>
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Tafsir Quran</a></li>
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Travel</a></li>
-                <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Prayer</a></li>
+                <li><a href="/prayer" className="hover:text-[#c5a075] transition-colors">• Prayer</a></li>
                 <li><a href="#" className="hover:text-[#c5a075] transition-colors">• Events</a></li>
               </ul>
             </div>
