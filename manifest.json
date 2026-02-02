@@ -1,0 +1,23 @@
+
+{
+  "name": "IslamicEdu Learning Platform",
+  "short_name": "IslamicEdu",
+  "description": "Authentic Islamic Knowledge & Spiritual Learning Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c5a075",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/do5bwj81j/image/upload/v1770008761/Asset_3_gmnqey.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://res.cloudinary.com/do5bwj81j/image/upload/v1770008761/Asset_3_gmnqey.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
