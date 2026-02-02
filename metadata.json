@@ -1,0 +1,7 @@
+{
+  "name": "IslamicEdu - Islamic Learning Platform",
+  "description": "An elegant platform dedicated to authentic Islamic learning, spiritual growth, and community engagement, featuring advanced AI-powered educational tools.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
